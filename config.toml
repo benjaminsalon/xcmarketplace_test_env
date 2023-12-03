@@ -1,0 +1,34 @@
+[relaychain]
+
+default_command = "./binaries/polkadot-v1.0.0"
+default_args = [ "-lparachain=debug" ]
+
+chain = "rococo-local"
+
+  [[relaychain.nodes]]
+  name = "alice"
+
+  [[relaychain.nodes]]
+  name = "bob"
+
+  [[relaychain.nodes]]
+  name = "charlie"
+
+  [[relaychain.nodes]]
+  name = "dave"
+
+[[parachains]]
+id = 1000
+cumulus_based = true
+
+  [parachains.collator]
+  name = "parachain-A-1000-collator01"
+  command = "./binaries/parachain-template-node-v1.0.0"
+
+[[parachains]]
+id = 1001
+cumulus_based = true
+
+  [parachains.collator]
+  name = "parachain-B-1001-collator01"
+  command = "./binaries/parachain-template-node-v1.0.0"
